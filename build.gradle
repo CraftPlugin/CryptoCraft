@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'kr.entree.spigradle' version '2.4.3'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'kr.acog'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compileOnly spigot("1.20.4")
+    compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
+    implementation 'io.typst:bukkit-view-core:7.0.6'
+    implementation 'com.google.code.gson:gson:2.8.8'
+}
+
+
+spigot {
+    name = 'CryptoCraftPlugin'
+    authors = ['Acog']
+    apiVersion = '1.20'
+    excludeLibraries = ['*']
+    softDepends = ['Vault']
+
+    commands {
+        create("암호화폐")
+    }
+}
