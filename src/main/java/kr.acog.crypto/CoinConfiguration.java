@@ -21,7 +21,7 @@ public class CoinConfiguration {
     public static Map<String, Coin> init(CryptoCraftPlugin plugin, List<String> coins) {
         Gson gson = new Gson();
         try (InputStream inputStream = plugin.getResource("coin_data.json");
-             Reader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
+            Reader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
 
             Type type = new TypeToken<Map<String, JsonObject>>() {}.getType();
             Map<String, JsonObject> rawCoinData = gson.fromJson(reader, type);

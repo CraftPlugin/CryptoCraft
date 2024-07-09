@@ -3,9 +3,7 @@ package kr.acog.crypto;
 import io.typst.bukkit.view.BukkitView;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Create by. Acog
@@ -16,6 +14,7 @@ public class CryptoCraftPlugin extends JavaPlugin {
 
     private CoinFetcher fetcher;
     public Map<String, Coin> coins = new HashMap<>();
+    public Map<UUID,Map<Coin, Integer>> players = new HashMap<>();
 
     @Override
     public void onEnable() {
